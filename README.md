@@ -1,1 +1,1 @@
-# Leetcode-Practice---Leetsync
+# Leetcode Practice-Leetsync

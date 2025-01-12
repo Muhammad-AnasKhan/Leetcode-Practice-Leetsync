@@ -7,7 +7,7 @@ class Solution:
         return s == s[::-1]
 
         # 2 pointers aproach
-
+        # s = ''.join([char for char in s.lower() if char.isalnum()])
         # if(s.strip() == '' or len(s)==1): return True
         # if s:
         #     l =0

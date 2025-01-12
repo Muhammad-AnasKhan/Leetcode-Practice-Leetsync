@@ -3,23 +3,25 @@ class Solution:
         if(s.strip() == '' or len(s)==1): return True
 
         s = ''.join([char for char in s.lower() if char.isalnum()])
-        if(s.strip() == '' or len(s)==1): return True
-        if s:
-            # comparing reverse of string
-            # return s == s[-1::-1]
+        # comparing reverse 
+        return s == s[::-1]
 
-            l =0
-            r = len(s)-1
+        # 2 pointers aproach
 
-            if s[l] != s[r]: 
-                return False
+        # if(s.strip() == '' or len(s)==1): return True
+        # if s:
+        #     l =0
+        #     r = len(s)-1
 
-            while (l<r):
-                if s[l] == s[r]:
-                    l = l+1
-                    r = r-1
-                else:
-                    return False
-            return True
-        else:
-            return False
+        #     if s[l] != s[r]: 
+        #         return False
+
+        #     while (l<r):
+        #         if s[l] == s[r]:
+        #             l = l+1
+        #             r = r-1
+        #         else:
+        #             return False
+        #     return True
+        # else:
+        #     return False

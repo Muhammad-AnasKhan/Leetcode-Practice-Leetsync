@@ -2,7 +2,7 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         if(s.strip() == '' or len(s)==1): return True
 
-        s = ''.join([char for char in s.lower() if char.isalnum()])
+        s = ([char for char in s.lower() if char.isalnum()])
         # comparing reverse 
         return s == s[::-1]
 

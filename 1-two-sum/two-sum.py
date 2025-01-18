@@ -1,18 +1,17 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # for i in range(len(nums)-1):
-        #     if nums[i] + nums[i+1] == target:
-        #         return [i, i+1]
-        #     i+=1
+        # Brute Force
+        # for i in range(len(nums)):
+        #     for j in range(i+1, len(nums)):
+        #         if nums[i] + nums[j] == target:
+        #             return [i, j]
         # return []
 
-        numMap = {}
-        n = len(nums)
-
-        for i in range(n):
-            complement = target - nums[i]
-            if complement in numMap:
-                return [numMap[complement], i]
-            numMap[nums[i]] = i
-
-        return []  # No solution found
+        # Using Hashset
+        hashmap = {}
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in hashmap:
+                return [hashmap[diff], i]
+            hashmap[nums[i]] = i
+        return []

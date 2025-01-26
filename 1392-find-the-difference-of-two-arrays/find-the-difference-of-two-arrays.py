@@ -5,7 +5,7 @@ class Solution:
         h2 = set(nums2)
 
         # Remove common elements
-        for num in nums2:
+        for num in list(h2):
             if num in h1:
                 h1.remove(num)
                 h2.discard(num)

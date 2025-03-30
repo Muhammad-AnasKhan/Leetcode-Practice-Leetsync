@@ -17,24 +17,24 @@ class Solution:
         }
         # starting from the atomic base case
         # and then moving to the higher order
-        def solve(num: int) -> str:
+        def solve(num: int) -> list:
             if num < 10:
-                return lessThanTen[num].strip() 
+                return [lessThanTen[num]]
             elif num < 20:
-                return lessThenTwenty[num].strip()
+                return [lessThenTwenty[num] ]
             elif num < 100:
-                return (lessThanHundred[num//10] + " " + solve(num % 10)).strip()
+                return [lessThanHundred[num//10]] + ([lessThanTen[num % 10]] if num % 10 != 0 else [])
             elif num < 1000:
-                return (lessThanTen[num // 100] + " Hundred " + solve(num % 100)).strip()
+                return [lessThanTen[num // 100] , "Hundred"] + (solve(num % 100) if num % 100 != 0 else [])
             elif num < 1000000:
-                return (solve(num // 1000) + " Thousand " + solve(num % 1000)).strip()
+                return solve(num // 1000) + ["Thousand"] + (solve(num % 1000) if num % 1000 != 0 else [])
             elif num < 1000000000:
-                return (solve(num // 1000000) + " Million " + solve(num % 1000000)).strip()
+                return solve(num // 1000000) + ["Million"] + (solve(num % 1000000) if num % 1000000 != 0 else [])
             else:
-                return solve(num // 1000000000) + " Billion " + solve(num % 1000000000)
+                return solve(num // 1000000000) + ["Billion"] + ( solve(num % 1000000000) if num % 1000000000 != 0 else [])
 
         if num == 0:
             return "Zero"
         else:
-            return  solve(num).strip()
+            return  " ".join(solve(num))
         

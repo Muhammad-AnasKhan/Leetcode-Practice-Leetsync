@@ -17,7 +17,7 @@ class Solution:
             if ch in '*+-':
                 left = self.diffWaysToCompute(expression[:i])
                 right = self.diffWaysToCompute(expression[i + 1:])
-
+ 
                 # Step 4: Combine the results from left and right sub-expressions
                 for l in left:
                     for r in right:

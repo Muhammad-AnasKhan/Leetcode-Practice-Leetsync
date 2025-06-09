@@ -7,7 +7,7 @@ class Solution:
         #             return [i, j]
         # return []
 
-        # Using Hashset
+        # Using hashmap
         hashmap = {}
         for i in range(len(nums)):
             diff = target - nums[i]
